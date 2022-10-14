@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sundhedsplatformen</title>
+    <link rel="stylesheet" type="text/css" href="Index.css">
+    <script src="loginScript.js"></script>
+</head>
+<style>
+    body {
+        background-image: url('https://img.freepik.com/free-photo/doctor-reading-coronavirus-patient-medical-chart_53876-143051.jpg?w=1480&t=st=1664459413~exp=1664460013~hmac=1ce04e132b58b15ad0eb1bd7ce189184ac5c1aac191dc1c823f332f2e03b22ba');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<body>
+<h1>Sundhedsplatformen</h1>
+<form method="post" action="HomePage.html" onsubmit="return logintrial()"> <!--  -->
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="Input username" required><br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Input password" required><br>
+
+    <input type="submit" id="loginButton" value="Login"> <br>
+
+    <img src="https://www.hvidovrehospital.dk/nyt-hospital-hvidovre/PublishingImages/RegH.png" alt="RH" height="200" id="region"><br>
+    <a href="https://orbit.dtu.dk/en/persons/christian-budtz">IT-Support</a>
+</form>
+
+</body>
+</html>

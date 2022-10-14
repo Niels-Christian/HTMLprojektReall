@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HTMLprojektReal:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>HTMLprojektReal</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="XMLserialiser-1.war">
+      <element id="artifact" artifact-name="HTMLprojektReal:war exploded" />
+    </root>
+  </artifact>
+</component>
