@@ -16,29 +16,24 @@
 </style>
 <script>
     function showData(){
+        const ConsultForm = document.getElementById("ConsultForm");
         const first = document.getElementById("fName").value;
         const last = document.getElementById("lName").value;
         const age = document.getElementById("age").value;
         const start = document.getElementById("startTime").value;
         const end = document.getElementById("endTime").value;
         if (first == '' || last == '' || age == '' || start == '' || end == ''){
-            location.reload()
+            ConsultForm.reset();
+            document.getElementById("recieved").innerText = '';
         } else{
             document.getElementById("recieved").innerText = first + ' ' +  last;
-            document.getElementById("fName").innerText = '';
-            document.getElementById("lName").innerText = '';
-            document.getElementById("age").innerText = '';
-            document.getElementById("startTime").innerText = '';
-            document.getElementById("endTime").innerText = '';
+            ConsultForm.reset();
         }
-
-
-
     }
 </script>
 <body>
 <h1>Create Consultation</h1>
-<form>
+<form id="ConsultForm">
     <label for="fName">First Name:</label>
     <input type="text" id="fName" name="firstName" required><br>
     <label for="lName">Last Name</label>
@@ -54,7 +49,7 @@
 
     <a><button type="button" onclick="showData()">Create Consultation</button></a> <!--href="HomePage.html"-->
     <a href="HomePage.html"><button type="button" id="back">Back</button></a>
-    <div id="recieved"></div>
 </form>
+<div id="recieved"></div>
 </body>
 </html>
