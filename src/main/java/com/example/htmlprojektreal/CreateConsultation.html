@@ -22,14 +22,14 @@
         const start = document.getElementById("startTime").value;
         const end = document.getElementById("endTime").value;
         if (first == '' || last == '' || age == '' || start == '' || end == ''){
+            location.reload()
+        } else{
             document.getElementById("recieved").innerText = first + ' ' +  last;
             document.getElementById("fName").innerText = '';
             document.getElementById("lName").innerText = '';
             document.getElementById("age").innerText = '';
             document.getElementById("startTime").innerText = '';
             document.getElementById("endTime").innerText = '';
-        } else{
-            location.reload()
         }
 
 
