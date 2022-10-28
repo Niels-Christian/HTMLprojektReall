@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name = "HelloServlet", urlPatterns = "/")
+@WebServlet(name = "ExtendThing", urlPatterns = "/")
 public  class ExtendThing extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
