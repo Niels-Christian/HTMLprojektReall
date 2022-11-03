@@ -5,6 +5,11 @@
     <title>Home Page</title>
     <link rel="stylesheet" type="text/css" href="Homepagedesign.css">
 </head>
+<script>
+    function logOut(){
+        location.replace(index.html)
+    }
+</script>
 <style>
     body {
         background-image: url('https://img.freepik.com/free-photo/woman-working-as-doctor_23-2148827818.jpg?w=1380&t=st=1664461217~exp=1664461817~hmac=4090585b6d39647cc26941bf5cca80cecdb18de52f4c71930c8a85b4f5e6d8a2');
@@ -19,7 +24,7 @@
     <a href="CreateConsultation.html"><input type="button" id="createConsultation" value="Create Consultation"></a>
     <a href="GetConsultation.html"><input type="button" id="getConsultation" value="Get Consultation"></a>
 
-    <a href="index.html"><input type="button" id="logOut" value="Log Out"></a>
+    <a href="index.html"><input type="button" id="logOut" value="Log Out" onclick="logOut()"></a>
 
 </form>
 </body>

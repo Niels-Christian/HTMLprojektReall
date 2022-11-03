@@ -13,8 +13,20 @@
         background-attachment: fixed;
     }
 </style>
+<script>
+    function findData(){
+        const getCPR = document.getElementById("getCPR");
+        for (let i = 0; i < currentArray.length; i++) {
+            if (getCPR == currentArray[i]){
+                document.getElementById("recieved").innerText = '';
+            } else{
+                document.getElementById("recieved").innerText = first + ' ' +  last;
+            }
+        }
+    }
+</script>
 <body>
-<h1>Consultation of patient</h1>
+<h1>Get Consultation</h1>
 <form>
     <label for="fName">First Name:</label>
     <input type="text" id="fName" name="firstName"><br>
@@ -23,7 +35,9 @@
     <label for="cpr">CPR:</label>
     <input type="text" id="cpr" name="CPR" placeholder="XXXXXX-XXXX" maxlength="11" required><br>
 
+    <button type="button" id="findPatient" name="find" onclick="findData()">Find Patient</button>
     <a href="HomePage.html"><button type="button" id="back">Back</button></a>
+    <div id="recieved"></div>
 </form>
 </body>
 </html>
