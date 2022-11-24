@@ -15,6 +15,7 @@
     }
 </style>
 <script>
+    let patients = [];
     function showData(){
         const ConsultForm = document.getElementById("ConsultForm");
         const first = document.getElementById("fName").value;
@@ -22,12 +23,21 @@
         const CPR = document.getElementById("CPR").value;
         const start = document.getElementById("startTime").value;
         const end = document.getElementById("endTime").value;
+        let PInformation = []
         if (first == '' || last == '' || CPR == '' || start == '' || end == ''){
+            PInformation.firstName = first;
+            PInformation.lastName = last;
+            PInformation.CPRnum = CPR;
+            PInformation.startTime = start;
+            PInformation.endTime = end;
+            patients.push(PInformation);
             ConsultForm.reset();
-            document.getElementById("recieved").innerText = '';
+            document.getElementById("recieved").innerText = patients;
         } else{
             const patientData = new Array(first, last, CPR, start, end)
-            document.getElementById("recieved").innerText = first + ' ' + last;
+            document.getElementById("fullName").innerText = 'Name: ' + first + ' ' + last;
+            document.getElementById("cprNumber").innerText = 'CPR Number: ' + CPR;
+            document.getElementById("StartToEnd").innerText = 'Time: ' + start + ' - ' + end;
             ConsultForm.reset();
         }
     }
@@ -51,6 +61,8 @@
     <a><button type="button" onclick="showData()">Create Consultation</button></a> <!--href="HomePage.html"-->
     <a href="HomePage.html"><button type="button" id="back">Back</button></a>
 </form>
-<div id="recieved"></div>
+<div id="fullName"></div>
+<div id="cprNumber"></div>
+<div id="StartToEnd"></div>
 </body>
 </html>

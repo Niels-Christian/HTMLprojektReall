@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <title>Sundhedsplatformen</title>
     <link rel="stylesheet" type="text/css" href="Index.css">
-    <script src="loginScript.js"></script>
 </head>
+<script>
+    function logintrial() {
+        const userName = document.getElementById("username").value;
+        const passWord = document.getElementById("password").value;
 
+        if (userName == "qq" && passWord == "qq") {
+
+            return true;
+
+        } else {
+            location.reload();
+            alert("WRONG USERNAME OR PASSWORD!!!!")
+            return false;
+        }
+    }
+</script>
 <style>
     body {
         background-image: url('https://img.freepik.com/free-photo/doctor-reading-coronavirus-patient-medical-chart_53876-143051.jpg?w=1480&t=st=1664459413~exp=1664460013~hmac=1ce04e132b58b15ad0eb1bd7ce189184ac5c1aac191dc1c823f332f2e03b22ba');
@@ -18,7 +32,7 @@
 
 <body>
 <h1>Sundhedsplatformen</h1>
-<form method="post" action="HomePage.html" onsubmit="return logintrial()"> <!--  -->
+<form method="post" action="ExtendThing"> <!--onsubmit="return logintrial()"-->
     <label for="username">Username</label>
     <input type="text" id="username" name="username" placeholder="Input username" required><br>
     <label for="password">Password</label>
