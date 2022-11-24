@@ -3,4 +3,5 @@ import jakarta.ws.rs.core.Application;
 
 @ApplicationPath("/rest")
 public class AppConfig extends Application {
+
 }
