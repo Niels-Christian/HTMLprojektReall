@@ -1,7 +1,7 @@
 package com.example.htmlprojektreal;
 import java.io.*;
 import java.net.*;
-public class Connection
+public class Connecting
 {
     public static void main(String[] arg)
     {
