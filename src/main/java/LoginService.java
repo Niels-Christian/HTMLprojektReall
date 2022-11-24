@@ -5,6 +5,6 @@ import jakarta.ws.rs.Path;
 public class LoginService {
     @GET
     public String testAhoy(){
-        return ('Ahoy');
+        return ("Ahoy");
     }
 }
