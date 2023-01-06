@@ -16,9 +16,16 @@ public class PythonConnector {
             BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
             PrintWriter out = new PrintWriter(client.getOutputStream(),true);
 
-            fromClient = in.readLine();
-            System.out.println("received: " + fromClient);
+            String ECGInput;
+            while ((ECGInput = in.readLine()) != null) {
+                System.out.println("received: " + ECGInput);
+                }
 /*
+            String ECGInput;
+                ECGInput = in.readLine();
+                System.out.println("received: " + ECGInput);
+
+
             String userInput;
             while ((userInput = in.readLine()) != null) {
                 out.println(userInput);
@@ -30,6 +37,5 @@ public class PythonConnector {
             System.out.println("socket closed");
 
         }
-        System.exit(0);
     }
 }
