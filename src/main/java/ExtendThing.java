@@ -1,3 +1,4 @@
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
@@ -11,8 +12,9 @@ import java.io.PrintWriter;
 @WebServlet(name = "ExtendThing", urlPatterns = "/api")
 public  class ExtendThing extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        PrintWriter writer = resp.getWriter();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter writer = response.getWriter();
+        request.getRequestDispatcher("PersonaleHome.html").include(request, response);
         writer.println("Ahoy!");
         writer.close();
     }
