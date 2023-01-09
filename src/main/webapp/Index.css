@@ -6,7 +6,7 @@ h1 {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-#loginButton{
+input[type="submit"]{
     <!--margin-left: 15px;-->
     width: 55px;
     height: 30px;
