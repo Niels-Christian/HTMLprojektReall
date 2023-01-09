@@ -1,6 +1,6 @@
 async function login() { //Stjålet fra Christian
     // Serialiser formen til js-objekt
-    let loginform = document.getElementById("loginButton");
+    let loginform = document.getElementById("loginform");
     const formData = new FormData(loginform);
     const object = Object.fromEntries(formData);
     console.log(object)
