@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Sundhedsplatformen</title>
     <link rel="stylesheet" type="text/css" href="Sundhedsplatformen.css">
-    <script src="PersonaleOversigtScript.js"></script>
+    <script src="indexScript.js"></script>
 </head>
 <script>
     // function logintrial() {
@@ -36,14 +36,13 @@
 
 <body>
 <h1>Sundhedsplatformen</h1>
-<form id="loginform" method="post" onsubmit="return login()"> <!--action="PersonaleOversigtScript.js"-->
+<form id="loginform" method="post" onsubmit="return personaleLogin()"> <!--action="indexScript.js"-->
 
-    <input type="submit" class="ui-button" id="loginButton" value="Patient-Login" style="position: absolute; bottom:650px; right:275px">
     <input type="submit" class="ui-button" id="PersonaleLoginButton" value="Personale-Login" style="position: absolute; bottom:650px;  left:285px">
-
-
-
     <a href="https://orbit.dtu.dk/en/persons/christian-budtz" style="position:absolute; bottom:5px; left:5px">IT-Support</a>
+</form>
+<form id="patientlogin" method="post" onsubmit="return patientLogin()">
+    <input type="submit" class="ui-button" id="loginButton" value="Patient-Login" style="position: absolute; bottom:650px; right:275px">
 </form>
 </body>
 </html>
