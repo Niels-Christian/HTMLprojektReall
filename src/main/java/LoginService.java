@@ -1,7 +1,7 @@
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
-@Path("index.html")
+@Path("Sundhedsplatformen.html")
 public class LoginService {
     @GET
     public String testAhoy(){

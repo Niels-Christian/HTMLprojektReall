@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Sundhedsplatformen</title>
-    <link rel="stylesheet" type="text/css" href="Index.css">
+    <link rel="stylesheet" type="text/css" href="Sundhedsplatformen.css">
 </head>
 <script>
     function logintrial() {
@@ -23,29 +23,33 @@
 </script>
 <style>
     body {
-        background-image: url('https://img.freepik.com/free-photo/doctor-reading-coronavirus-patient-medical-chart_53876-143051.jpg?w=1480&t=st=1664459413~exp=1664460013~hmac=1ce04e132b58b15ad0eb1bd7ce189184ac5c1aac191dc1c823f332f2e03b22ba');
+        background-image: url('https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/324042762_1312878056232311_2294828477320120312_n.png?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=-5XZpdsi8mQAX_02VoV&_nc_ht=scontent-cph2-1.xx&oh=03_AdSVJlZfvP35qCp904T1UYU-yZZ_9xKf3y6eI4VTLFehjA&oe=63E29763');
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
+    h1 {text-align: center;}
+    p.solid {border-style: solid;}
+
 </style>
 
 <body>
 <h1>Sundhedsplatformen</h1>
 <form method="post" action="ExtendThing"> <!--onsubmit="return logintrial()"-->
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" placeholder="Input username" required><br>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" placeholder="Input password" required><br>
 
-    <input type="submit" id="loginButton" value="Doctor-Login">
+    <input type="submit" class="ui-button" id="loginButton" value="Patient-Login" style="position: absolute; bottom:650px; right:275px">
+    <input type="submit" class="ui-button" value="Personale-Login" style="position: absolute; bottom:650px;  left:285px">
 
 
-    <img src="https://www.hvidovrehospital.dk/nyt-hospital-hvidovre/PublishingImages/RegH.png" alt="RH" height="200" id="region"><br>
+
     <a href="https://orbit.dtu.dk/en/persons/christian-budtz" style="position:absolute; bottom:5px; left:5px">IT-Support</a>
+
+
+
+
+
 </form>
-<form>
-    <input type="submit" id="patientButton" value="Patient-Login">
-</form>
+
+
 </body>
 </html>

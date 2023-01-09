@@ -26,7 +26,7 @@ public  class ExtendThing extends HttpServlet {
             PrintWriter writer = resp.getWriter();
             writer.print("Congratulations, " + uid + ", you got in!");
         } else {
-            resp.sendRedirect("index.html");
+            resp.sendRedirect("Sundhedsplatformen.html");
         }
     }
 }
