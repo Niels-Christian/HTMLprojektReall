@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="HTMLprojektReal:war exploded">
+  <artifact type="exploded-war" name="HTMLprojektReall:war exploded">
     <output-path>$PROJECT_DIR$/target/HTMLprojektReall-1</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>HTMLprojektReal</module>
+        <module>HTMLprojektReall</module>
         <packaging>war</packaging>
       </options>
     </properties>
@@ -44,6 +44,8 @@
           <element id="library" level="project" name="Maven: jakarta.inject:jakarta.inject-api:2.0.1" />
           <element id="library" level="project" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.3" />
           <element id="library" level="project" name="Maven: jakarta.ws.rs:jakarta.ws.rs-api:3.1.0" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.19" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
