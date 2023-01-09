@@ -7,8 +7,8 @@ public class DatabaseConnector {
     public static Connection getConnection() {
         try {
             if (connection == null || connection.isClosed()) {
-                connection = DriverManager.getConnection("jdbc:mysql://mysql-db.caprover.diplomportal.dk/s204814?" +
-                        "user=s204814&password=IORTlOFEarsqvyYfAfBAN");
+                connection = DriverManager.getConnection("jdbc:mysql://mysql-db.caprover.diplomportal.dk/s215846?" +
+                        "user=s215846&password=E2yMFR0C4Cs7u3Bc5gsih");
             }
         } catch (SQLException e) {
             e.printStackTrace();
