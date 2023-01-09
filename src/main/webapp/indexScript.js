@@ -20,7 +20,7 @@ async function personaleLogin() { //Stjålet fra Christian
     // localStorage.setItem("user",payloadJson.username);
     //Viderestil til den rigtige side!
     localStorage.setItem("token",token);
-    window.location.href="PersonaleHome.html"
+    window.location.href="PersonaleLogin.html"
 }
 
 async function patientLogin() { //Stjålet fra Christian
