@@ -1,10 +1,11 @@
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
-@Path("index.html")
+@Path("login")
 public class LoginService {
     @GET
-    public String testAhoy(){
+    public String getLogin(){
         return ("Ahoy");
     }
 }
+//IT3E22
