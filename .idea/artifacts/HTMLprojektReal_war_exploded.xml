@@ -11,7 +11,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="HTMLprojektReall" />
+          <element id="module-output" name="HTMLprojektReal" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.4" />
@@ -44,12 +44,14 @@
           <element id="library" level="project" name="Maven: jakarta.inject:jakarta.inject-api:2.0.1" />
           <element id="library" level="project" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.3" />
           <element id="library" level="project" name="Maven: jakarta.ws.rs:jakarta.ws.rs-api:3.1.0" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.19" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/HTMLprojektReall-1/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="HTMLprojektReall/web/Web" />
+      <element id="javaee-facet-resources" facet="HTMLprojektReal/web/Web" />
     </root>
   </artifact>
 </component>

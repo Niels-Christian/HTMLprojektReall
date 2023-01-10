@@ -1,7 +1,8 @@
+package service;
 public class Patient
 {
-    private String CPR;
-    private String Fornavn;
+    String CPR;
+    String Fornavn;
 
     public String getCPR() {
         return CPR;
