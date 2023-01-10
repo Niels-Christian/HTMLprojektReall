@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="HTMLprojektReall-1.war">
+    <root id="archive" name="HTMLprojektReal-1.war">
       <element id="artifact" artifact-name="HTMLprojektReal:war exploded" />
     </root>
   </artifact>
