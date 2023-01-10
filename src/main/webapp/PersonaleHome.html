@@ -9,6 +9,25 @@
     function logOut(){
         location.replace("index.html")
     }
+    //Næste del er stjålet fra Christian
+    let pt = [];
+    function doCalc(){
+        const a = document.getElementById("input1").value;
+        const b = document.getElementById("input2").value;
+        let c = {}
+        c.name = a;
+        c.cpr = b;
+        pt.push(c)
+        document.getElementById("list").innerText = JSON.stringify(pt) ;
+    }
+    // function doRemove(){
+    //     document.getElementById("result").innerText = c.reduce((a,e)=>a+Number(e),0) ;
+    // }
+    function doFind(){
+        const c = document.getElementById("input3").value
+        console.log(c + JSON.stringify(pt))
+        document.getElementById("result").innerText = JSON.stringify(pt.filter(e=>e.cpr==c)) ;
+    }
 </script>
 <style>
     body {
@@ -21,7 +40,6 @@
 
 <body>
 <h1>Personale Home</h1>
-
 <form>
     <a href="PersonaleHome.html.html"><input type="button" id="HentPatient-Journal" value="Hent Patient-Journal"></a>
     <a href="PersonaleHome.html.html"><input type="button" id="Opret Patient-Journal" value="Opret Patient-Journal"></a>
@@ -29,7 +47,19 @@
 
     <a href="index.html"><input type="button" id="logOut" value="Log Out" onclick="logOut()"></a>
 
-</form>
+</form> <br>
+<h1>Testing:</h1>
+<input type="text" id="input1">
+<input type="text" id="input2">
+<div>Resultat</div>
+<div id="list"></div>
+
+<button onclick="doCalc()">Opret Patient-Journal</button>
+<br>
+<input type="text" id="input3">
+<button onclick="doFind()">Hent Patient-Journal</button>
+Fandt:
+<div id="result"></div>
 
 </body>
 </html>
