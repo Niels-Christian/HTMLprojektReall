@@ -37,20 +37,30 @@
         background-attachment: fixed;
     }
 </style>
+<script>
+    window.onload = function secrets(){
+    var hiddenName = '<input type="text" id="input1" placeholder="Fulde Navn">';
+    var hiddencpr = '<input type="text" id="input2" placeholder="XXXXXX-XXXX">';
 
+    document.getElementById("Opret").addEventListener("click", function(){
+        document.getElementById("invis-name-container").innerHTML = hiddenName;
+        document.getElementById("invis-cpr-container").innerHTML = hiddencpr;
+    });}
+</script>
 <body>
 <h1>Personale Home</h1>
 <form>
-    <a href="PersonaleHome.html.html"><input type="button" id="HentPatient-Journal" value="Hent Patient-Journal"></a>
-    <a href="PersonaleHome.html.html"><input type="button" id="Opret Patient-Journal" value="Opret Patient-Journal"></a>
+    <input type="button" id="HentPatient" value="Hent Patient-Journal">
+    <input type="button" id="Opret" value="Opret Patient-Journal">
     <a href="PersonaleHome.html.html"><input type="button" id="Rediger Patient-Journal" value="Rediger Patient-Journal"></a>
 
-    <a href="index.html"><input type="button" id="logOut" value="Log Out" onclick="logOut()"></a>
+    <a href="index.html"><input type="button" id="logOut" value="Log Out" onclick="logOut()"></a> <br>
+
 
 </form> <br>
 <h1>Testing:</h1>
-<input type="text" id="input1">
-<input type="text" id="input2">
+<div id="invis-name-container"></div>
+<div id="invis-cpr-container"></div>
 <div>Resultat</div>
 <div id="list"></div>
 
