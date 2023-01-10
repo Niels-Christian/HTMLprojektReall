@@ -2,8 +2,7 @@ import java.io.*;
 import java.net.*;
 public class Connecting
 {
-    public static void main(String[] arg)
-    {
+    public static void main(String[] arg) {
         try {
             URL url = new URL("http://130.225.170.241:8080/hello/");
             InputStream inputStream = url.openStream();
