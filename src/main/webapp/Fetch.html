@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sundhedsplatformen</title>
+</head>
+<body>
+<script>
+    function hentPatienter(){
+        fetch("rest/patients").then(
+            function(result){
+                result.json().then(
+                    function(json){
+                        alert("Got data: " +JSON.stringify(json))
+                        document.getElementById("data").innerText=(json[0].name);
+
+                    }
+                )
+            }
+        )
+    }
+    async function sendPatient(){
+        const res = await fetch("rest/patients", {
+            method: "POST",
+            body:'{"name":"Nancy","cpr":"2512489996"}',
+            headers: {
+                'Content-Type':"application/json"
+            }
+        })
+        const json = await res.json();
+        alert(JSON.stringify(json))
+    }
+</script>
+<button onclick="hentPatienter()">Hent</button>
+<div id="data"></div>
+<button onclick="sendPatient()">Send</button>
+</body>
+</html>
