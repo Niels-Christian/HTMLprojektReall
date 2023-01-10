@@ -14,5 +14,10 @@ async function truePersonaleLogin() {
     })
     const token = await res.text();
     localStorage.setItem("token", token);
+    //Find en bruger fra token
+    // const payload = window.atob(token.split(".")[1]);
+    // const payloadJson = JSON.parse(payload);
+    // localStorage.setItem("user",payloadJson.username);
+    //Redirect til side
     window.location.href = "PersonaleHome.html"
 }

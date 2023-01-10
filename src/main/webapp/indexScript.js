@@ -12,14 +12,6 @@ async function personaleLogin() { //Stjålet fra Christian
             "content-type": "application/json"
         }
     })
-    // hvis vi får en token, gemmer vi den i browserens localstorage
-    const token = await res.text();
-    // //For ekstra krymmel fisker vi en bruger ud af tokenen
-    // const payload = window.atob(token.split(".")[1]);
-    // const payloadJson = JSON.parse(payload);
-    // localStorage.setItem("user",payloadJson.username);
-    //Viderestil til den rigtige side!
-    localStorage.setItem("token",token);
     window.location.href="PersonaleLogin.html"
 }
 
@@ -37,13 +29,5 @@ async function patientLogin() { //Stjålet fra Christian
             "content-type": "application/json"
         }
     })
-    // hvis vi får en token, gemmer vi den i browserens localstorage
-    const token = await res.text();
-    // //For ekstra krymmel fisker vi en bruger ud af tokenen
-    // const payload = window.atob(token.split(".")[1]);
-    // const payloadJson = JSON.parse(payload);
-    // localStorage.setItem("user",payloadJson.username);
-    //Viderestil til den rigtige side!
-    localStorage.setItem("token",token);
     window.location.href="PatientLogin.html"
 }
