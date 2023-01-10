@@ -26,9 +26,10 @@ public  class ExtendThing extends HttpServlet {
         if (uid.toLowerCase().equals("qq") && pwd.equals("qq")) {
             resp.addCookie(new Cookie("session", uid));
             PrintWriter writer = resp.getWriter();
+            resp.sendRedirect("PersonaleHome.html");
             writer.print("Congratulations, " + uid + ", you got in!");
         } else {
-            resp.sendRedirect("PersonaleHome.html");
+            resp.sendRedirect("index.html");
         }
     }
 }
