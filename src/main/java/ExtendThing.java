@@ -27,7 +27,6 @@ public  class ExtendThing extends HttpServlet {
             resp.addCookie(new Cookie("session", uid));
             PrintWriter writer = resp.getWriter();
             resp.sendRedirect("PersonaleHome.html");
-            writer.print("Congratulations, " + uid + ", you got in!");
         } else {
             resp.sendRedirect("index.html");
         }
