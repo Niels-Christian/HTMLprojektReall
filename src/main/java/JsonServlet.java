@@ -3,6 +3,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import service.Patient;
 
 public class JsonServlet {
     public static void main(String[]args) throws IOException {
@@ -12,7 +13,7 @@ public class JsonServlet {
         ObjectMapper jsonMapper = new ObjectMapper();
         String s = jsonMapper.writeValueAsString(pt);
         System.out.println(s);
-
+//hej
         s = s.replace("Endeavour", "Robert");
         System.out.println(s);
 
