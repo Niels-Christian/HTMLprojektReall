@@ -12,12 +12,12 @@ import java.io.PrintWriter;
 @WebServlet(name = "ExtendThing", urlPatterns = "/api")
 public  class ExtendThing extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter writer = response.getWriter();
-        request.getRequestDispatcher("PersonaleHome.html").include(request, response);
-        writer.println("Ahoy!");
-        writer.close();
-    }
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        PrintWriter writer = response.getWriter();
+//        request.getRequestDispatcher("PersonaleHome.html").include(request, response);
+//        writer.println("Ahoy!");
+//        writer.close();
+//    }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String uid = req.getParameter("username");
