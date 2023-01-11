@@ -10,7 +10,7 @@ public class DatabaseInfo {
         String query = "select Name, CPR, ECG from PatientInfo";
         Connection conn = null;
         Statement stmt = null;
-        try {
+        try { //
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://mysql-db.caprover.diplomportal.dk/s215846?" +
                     "user=s215846&password=E2yMFR0C4Cs7u3Bc5gsih");
