@@ -22,7 +22,7 @@ public  class ExtendThing extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String uid = req.getParameter("username");
         String pwd = req.getParameter("password");
-
+//Hoi
         if (uid.toLowerCase().equals("qq") && pwd.equals("qq")) {
             resp.addCookie(new Cookie("session", uid));
             PrintWriter writer = resp.getWriter();
