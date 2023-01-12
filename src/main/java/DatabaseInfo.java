@@ -1,3 +1,8 @@
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.core.MediaType;
+import service.Patient;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -6,8 +11,10 @@ import java.util.Scanner;
 
 
 public class DatabaseInfo {
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void postPatient(Patient p) {
 
-    public static void main(String[] args) {
         Connection conn = null;
         Statement stmt = null;
         Scanner scan = new Scanner(System.in);
