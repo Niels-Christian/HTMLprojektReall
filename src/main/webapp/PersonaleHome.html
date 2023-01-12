@@ -6,14 +6,11 @@
     <link rel="stylesheet" type="text/css" href="PersonaleHome.css">
 </head>
 <script>
-    function logOut(){
-        location.replace("index.html")
-    }
     //Næste del er stjålet fra Christian
     let pt = [];
     function doCalc(){
         const a = document.getElementById("input1").value;
-        const b = document.getElementById("input2").value;
+        const b = document.getElementById("CPR input").value;
         let c = {}
         c.name = a;
         c.cpr = b;
@@ -23,11 +20,24 @@
     // function doRemove(){
     //     document.getElementById("result").innerText = c.reduce((a,e)=>a+Number(e),0) ;
     // }
-    function doFind(){
+    async function doFind(cprForm) {
+        let form = document.getElementById("cprForm");
+        let formData = new FormData(form)
+        let patientJson = Object.fromEntries(formData);
+        let res = await fetch("api", {
+            method: "POST",
+            body: JSON.stringify(patientJson),
+            headers: {
+                'content-type': "application/json"
+            }
+        })
+
+
         const c = document.getElementById("input3").value
         console.log(c + JSON.stringify(pt))
-        document.getElementById("input2").innerText = JSON.stringify(pt.filter(e=>e.cpr==c)) ;
+        document.getElementById("result").innerText = JSON.stringify(pt.filter(e => e.cpr == c));
     }
+
     window.onload = function secrets(){
         var hiddenName = '<input type="text" id="input1" placeholder="Fulde Navn">';
         // var hiddencpr = '<input type="text" id="input2" placeholder="XXXXXX-XXXX">';
@@ -47,16 +57,34 @@
 </style>
 <body>
 <h1>Personale Home</h1>
+<form id="cprForm" onclick="doFind()">
+    <input type="text" id="CPR input" placeholder="XXXXXX-XXXX"> <br>
+    <input type="submit" id="HentPatient" value="Hent Patient-Journal">
+</form>
+
+
+
+
+
+
 <form>
-    <input onclick="doFind()" type="button" id="HentPatient" value="Hent Patient-Journal">
     <input onclick="doCalc()" type="button" id="Opret" value="Opret Patient-Journal">
-    <input type="button" id="Rediger Patient-Journal" value="Rediger Patient-Journal"> <br>
-    <input type="text" id="input2" placeholder="XXXXXX-XXXX"> <br>
+
     <div id="invis-name-container"></div>
     <div>Resultat</div>
-    <a href="index.html"><input type="button" id="logOut" value="Log Out" onclick="logOut()"></a> <br>
+    <a href="index.html"><input type="button" id="logOut" value="Log Out"></a> <br>
 
+<!--    Midlertidig kode-->
+    <h1>Testing:</h1>
+    <div>Resultat</div>
+    <div id="list"></div>
 
+<!--    <button onclick="doCalc()">Opret Patient-Journal</button>-->
+    <br>
+    <input type="text" id="input3">
+    <button onclick="doFind()">Hent Patient-Journal</button>
+    Fandt:
+    <div id="result"></div>
 </form> <br>
 
 </body>
