@@ -24,10 +24,10 @@ public class GetPatient {
             ResultSet rs = stmt.executeQuery(query);
             Patient patient = new Patient();
             while (rs.next()) {
-                patient.setFornavn(rs.getString(1));
+                patient.setName(rs.getString(1));
                 patient.setCPR(rs.getString(2));
-                String ecg = rs.getString(3);
-                String note = rs.getString(4);
+                patient.setECG(rs.getString(3));
+                patient.setNote(rs.getString(4));
             }
             rs.close();
             return patient;

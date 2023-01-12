@@ -2,7 +2,9 @@ package service;
 public class Patient
 {
     String CPR;
-    String Fornavn;
+    String Name;
+    String ECG;
+    String Note;
 
     public String getCPR() {
         return CPR;
@@ -12,12 +14,28 @@ public class Patient
         this.CPR = CPR;
     }
 
-    public String getFornavn() {
-        return Fornavn;
+    public String getName() {
+        return Name;
     }
 
-    public void setFornavn(String fornavn) {
-        Fornavn = fornavn;
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getECG() {
+        return ECG;
+    }
+
+    public void setECG(String ECG) {
+        this.ECG = ECG;
+    }
+
+    public String getNote() {
+        return Note;
+    }
+
+    public void setNote(String note) {
+        Note = note;
     }
 }
 
