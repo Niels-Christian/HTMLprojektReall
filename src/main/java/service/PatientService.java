@@ -1,24 +1,19 @@
+package service;
+
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import service.Patient;
-
-import java.util.ArrayList;
-import java.util.List;
+import model.GetPatient;
 
 @Path("patients")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class PatientService{
-
+private GetPatient getPatient = new GetPatient();
     @GET
-    public List<Patient> getPatient(){
-        ArrayList<Patient> patients = new ArrayList<>();
-        Patient patient = new Patient();
-        patient.setCPR("1234567890");
-        patient.setFornavn("Holger Danske");
-        patients.add(patient);
+    @Path("{cpr}")
+    public Patient getPatient(@PathParam("cpr") String cpr){
 
-        return patients;
+        return getPatient.getPatient(cpr);
     }
 
     @POST

@@ -1,18 +1,15 @@
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.MediaType;
+package model;
+
+import jakarta.ws.rs.FormParam;
+import jakarta.ws.rs.GET;
 import service.Patient;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.lang.String;
 
-@Path("GetPatient")
-public class DatabaseInfo {
+public class GetPatient {
     @GET
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Patient getPatient(Patient p) {
-
+    public Patient getPatient(@FormParam("cprForm") String cpr){
         Connection conn = null;
         Statement stmt = null;
 //        Scanner scan = new Scanner(System.in);
@@ -23,21 +20,17 @@ public class DatabaseInfo {
             conn = DriverManager.getConnection("jdbc:mysql://mysql-db.caprover.diplomportal.dk/s215846?" +
                     "user=s215846&password=E2yMFR0C4Cs7u3Bc5gsih");
             stmt = conn.createStatement();
-            String query = "select name, cpr, ecg, note from PatientInfo where cpr='" + p +"'";
+            String query = "select name, cpr, ecg, note from PatientInfo where cpr='" + cpr +"'";
             ResultSet rs = stmt.executeQuery(query);
+            Patient patient = new Patient();
             while (rs.next()) {
-                String name = rs.getString(1);
-                String cpr = rs.getString(2);
+                patient.setFornavn(rs.getString(1));
+                patient.setCPR(rs.getString(2));
                 String ecg = rs.getString(3);
                 String note = rs.getString(4);
-
-                System.out.println("Name: " + name);
-                System.out.println("CPR: " + cpr);
-                System.out.println("ECG: " + ecg);
-                System.out.println("Note: " + note);
-                System.out.println("");
             }
             rs.close();
+            return patient;
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -46,6 +39,7 @@ public class DatabaseInfo {
                 conn.close();
             } catch (Exception e) {}
         }
-        return p;
+
+    return null;
     }
 }
