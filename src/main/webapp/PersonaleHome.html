@@ -32,20 +32,20 @@
             }
         })
 
-
-        const c = document.getElementById("input3").value
-        console.log(c + JSON.stringify(pt))
-        document.getElementById("result").innerText = JSON.stringify(pt.filter(e => e.cpr == c));
+        //
+        // const c = document.getElementById("input3").value
+        // console.log(c + JSON.stringify(pt))
+        // document.getElementById("result").innerText = JSON.stringify(pt.filter(e => e.cpr == c));
     }
 
-    window.onload = function secrets(){
-        var hiddenName = '<input type="text" id="input1" placeholder="Fulde Navn">';
-        // var hiddencpr = '<input type="text" id="input2" placeholder="XXXXXX-XXXX">';
-
-        document.getElementById("Opret").addEventListener("click", function(){
-            document.getElementById("invis-name-container").innerHTML = hiddenName;
-            // document.getElementById("invis-cpr-container").innerHTML = hiddencpr;
-        });}
+    // window.onload = function secrets(){
+    //     var hiddenName = '<input type="text" id="input1" placeholder="Fulde Navn">';
+    //     // var hiddencpr = '<input type="text" id="input2" placeholder="XXXXXX-XXXX">';
+    //
+    //     document.getElementById("Opret").addEventListener("click", function(){
+    //         document.getElementById("invis-name-container").innerHTML = hiddenName;
+    //         // document.getElementById("invis-cpr-container").innerHTML = hiddencpr;
+    //     });}
 </script>
 <style>
     body {
@@ -57,11 +57,10 @@
 </style>
 <body>
 <h1>Personale Home</h1>
-<form id="cprForm" onclick="doFind()">
+<form id="cprForm" >
     <input type="text" id="CPR input" placeholder="XXXXXX-XXXX"> <br>
-    <input type="submit" id="HentPatient" value="Hent Patient-Journal">
 </form>
-
+<button type="submit" onclick="doFind()" id="HentPatient" value="Hent Patient-Journal">
 
 
 
