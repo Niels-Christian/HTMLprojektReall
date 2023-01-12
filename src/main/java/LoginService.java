@@ -9,7 +9,7 @@ import jakarta.ws.rs.core.Response;
 public class LoginService {
     @POST
     public Response getLogin(@FormParam("username") String username, @FormParam("password") String password){
-//Hoi
+
         if (username.equalsIgnoreCase("qq") && password.equals("qq")) {
            return Response.ok().cookie(new NewCookie.Builder(username).build()).build();
         } else {
@@ -18,4 +18,3 @@ public class LoginService {
 
     }
 }
-//IT3E22
