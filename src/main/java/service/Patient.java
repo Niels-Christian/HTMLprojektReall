@@ -1,6 +1,6 @@
 package service;
-public class Patient
-{
+public class Patient {
+
     String CPR;
     String Name;
     String ECG;

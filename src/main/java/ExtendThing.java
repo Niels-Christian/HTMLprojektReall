@@ -12,11 +12,11 @@ import java.io.PrintWriter;
 @WebServlet(name = "ExtendThing", urlPatterns = "/api")
 public  class ExtendThing extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter writer = response.getWriter();
-        request.getRequestDispatcher("PersonaleHome.html").include(request, response);
-        writer.close();
-    }
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        PrintWriter writer = response.getWriter();
+//        request.getRequestDispatcher("PersonaleHome.html").include(request, response);
+//        writer.close();
+//    }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String uid = req.getParameter("username");
@@ -25,7 +25,7 @@ public  class ExtendThing extends HttpServlet {
         if (uid.toLowerCase().equals("qq") && pwd.equals("qq")) {
             resp.addCookie(new Cookie("session", uid));
             PrintWriter writer = resp.getWriter();
-            resp.sendRedirect("api");
+            resp.sendRedirect("PersonaleHome.html");
         } else {
             resp.sendRedirect("index.html");
         }

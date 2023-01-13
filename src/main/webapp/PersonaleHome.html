@@ -23,10 +23,10 @@
     async function doFind(cprForm) {
         let form = document.getElementById("cprForm");
         let formData = new FormData(form)
-        let patientJson = Object.fromEntries(formData);
-        let res = await fetch("api/GetPatient?cpr=" + stringToSend, {
+        let cpr = Object.fromEntries(formData);
+        let res = await fetch("api/GetPatient/123456-1234" + stringToSend, {
             method: "GET",
-            body: JSON.stringify(patientJson),
+            body: JSON.stringify(cpr),
             headers: {
                 'content-type': "application/json"
             }
@@ -38,17 +38,19 @@
         // console.log(c + JSON.stringify(pt))
         // document.getElementById("result").innerText = JSON.stringify(pt.filter(e => e.cpr == c));
     }
-    async function tryFind(cprForm){
-        fetch("api/GetPatient?cpr=" +stringToSend)
-            .then(function (data){
-                data.text()
-                    .then(function(text){
-                            alert(text)
-                        }
-                    )
-            })
+    function hentPatienter(){
+        var cpr = document.getElementById("CPR input")
+        fetch("rest/patients").then(
+            function(result){
+                result.json().then(
+                    function(json){
+                        alert("Got data: " +JSON.stringify(json))
+                        document.getElementById("data").innerText=(json[0].name);
 
-
+                    }
+                )
+            }
+        )
     }
     // window.onload = function secrets(){
     //     var hiddenName = '<input type="text" id="input1" placeholder="Fulde Navn">';
@@ -72,7 +74,7 @@
 <form id="cprForm" >
     <input type="text" id="CPR input" placeholder="XXXXXX-XXXX"> <br>
 </form>
-<button type="submit" onclick="doFind()" id="HentPatient" value="Hent Patient-Journal">Hent Patient</button>
+<button type="submit" onclick="hentPatienter()" id="HentPatient" value="Hent Patient-Journal">Hent Patient</button>
 <div id="response">Se her:</div> <br>
 
 
