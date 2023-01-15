@@ -45,11 +45,20 @@
             function (result) {
                 result.json().then(
                     function (json) {
-                        alert("Got data: " + JSON.stringify(json))
-                        document.getElementById("navn").innerText = json.name;
-                        document.getElementById("cpr").innerText = json.cpr;
-                        document.getElementById("ecg").innerText = json.ecg;
-                        document.getElementById("note").innerText = json.note;
+                        if (json.cpr == cpr) {
+                            alert("Got data: " + JSON.stringify(json))
+                            document.getElementById("navn").innerText = json.name;
+                            document.getElementById("cpr").innerText = json.cpr;
+                            document.getElementById("ecg").innerText = json.ecg;
+                            document.getElementById("note").innerText = json.note;
+                        }
+                        else{
+                            alert("Patient findes ikke i databasen")
+                            document.getElementById("navn").innerText = "Indtast nyt CPR-nummer";
+                            document.getElementById("cpr").innerText = "";
+                            document.getElementById("ecg").innerText = "";
+                            document.getElementById("note").innerText = "";
+                        }
                     }
                 )
             }
