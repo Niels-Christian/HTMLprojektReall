@@ -19,7 +19,7 @@ private GetPatient getPatient = new GetPatient();
     @POST
     public Patient postPatient(Patient patient){
         String navn = patient.getName();
-        navn = "Hr." + navn;
+        navn = navn;
         patient.setName(navn);
         return patient;
     }

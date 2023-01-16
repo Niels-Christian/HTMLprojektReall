@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opret</title>
+</head>
+<script>
+    async function sendPatient(){
+        let navn = document.getElementById("input-navn").value;
+        let cpr = document.getElementById("input-cpr").value;
+        let ekg = document.getElementById("input-ekg").value;
+        let note = document.getElementById("input-note").value;
+        const res = await fetch("rest/patients", {
+            method: "POST",
+            body:'{"name":"Nancy","cpr":"2512489996"}',
+            headers: {
+                'Content-Type':"application/json"
+            }
+        })
+        const json = await res.json();
+        alert(JSON.stringify(json))
+    }
+</script>
+<style>
+    body {
+        background-image: url('https://ih1.redbubble.net/image.454518492.0964/flat,750x1000,075,f.u2.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+<body>
+<form id="opretForm" method="post">
+    <input type="text" id="input-navn" placeholder="Fulde navn"><br>
+    <input type="text" id="input-cpr" placeholder="CPR-nummer"><br>
+    <input type="text" id="input-ekg" placeholder="EKG-data?"><br>
+    <input type="text" id="input-note" placeholder="evt Note">
+</form>
+<input type="submit" id="OpretKnap" value="Opret">
+<a href="PersonaleHome.html"><button>Tilbage</button></a>
+</body>
+</html>
