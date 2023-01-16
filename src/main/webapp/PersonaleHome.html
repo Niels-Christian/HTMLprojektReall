@@ -46,7 +46,6 @@
                 result.json().then(
                     function (json) {
                         if (json.cpr == cpr) {
-                            alert("Got data: " + JSON.stringify(json))
                             document.getElementById("navn").innerText = json.name;
                             document.getElementById("cpr").innerText = json.cpr;
                             document.getElementById("ecg").innerText = json.ecg;
