@@ -6,19 +6,17 @@
 </head>
 <script>
     async function sendPatient(){
-        let navn = document.getElementById("input-navn").value;
-        let cpr = document.getElementById("input-cpr").value;
-        let ekg = document.getElementById("input-ekg").value;
-        let note = document.getElementById("input-note").value;
-        const res = await fetch("rest/patients", {
-            method: "POST",
-            body:'{"name":"Nancy","cpr":"2512489996"}',
-            headers: {
-                'Content-Type':"application/json"
+        let form= document.getElementById("opretForm");
+        let formData = new FormData(form)
+        let patientJson = Object.fromEntries(formData);
+        let res = await fetch("rest/patients", {
+            method:"POST",
+            body: JSON.stringify(patientJson),
+            headers:{
+                'content-type':"application/json"
             }
         })
-        const json = await res.json();
-        alert(JSON.stringify(json))
+
     }
 </script>
 <style>
@@ -31,12 +29,12 @@
 </style>
 <body>
 <form id="opretForm" method="post">
-    <input type="text" id="input-navn" placeholder="Fulde navn"><br>
-    <input type="text" id="input-cpr" placeholder="CPR-nummer"><br>
-    <input type="text" id="input-ekg" placeholder="EKG-data?"><br>
-    <input type="text" id="input-note" placeholder="evt Note">
+    <input type="text" id="input-navn" name="name" placeholder="Fulde navn"><br>
+    <input type="text" id="input-cpr" name="cpr" placeholder="CPR-nummer"><br>
+    <input type="text" id="input-ekg" name="ecg" placeholder="EKG-data?"><br>
+    <input type="text" id="input-note" name="note" placeholder="evt Note">
 </form>
-<input type="submit" id="OpretKnap" value="Opret">
+<input onclick="sendPatient()" type="submit" id="OpretKnap" value="Opret">
 <a href="PersonaleHome.html"><button>Tilbage</button></a>
 </body>
 </html>
