@@ -31,7 +31,8 @@ public class PatientController {
             return patient;
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
+        }
+        finally {
             try {
                 stmt.close();
                 conn.close();
