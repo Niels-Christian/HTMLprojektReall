@@ -17,9 +17,7 @@
         pt.push(c)
         document.getElementById("list").innerText = JSON.stringify(pt) ;
     }
-    // function doRemove(){
-    //     document.getElementById("result").innerText = c.reduce((a,e)=>a+Number(e),0) ;
-    // }
+
     async function doFind(cprForm) {
         let form = document.getElementById("cprForm");
         let formData = new FormData(form)
@@ -87,7 +85,7 @@
 </form>
 <button type="submit" onclick="hentPatienter()" id="HentPatient" value="Hent Patient-Journal">Hent Patient</button>
 <a href="Oprettelse.html"><button type="button" id="OpretPatient">Opret Patient</button></a>
-<!--Begynd paa "Opret patient" (Brug @POST)-->
+<a href="index.html"><button type="button">Log Ud</button></a>
 <div id="navn"></div>
 <div id="cpr"></div>
 <div id="ecg"></div>
