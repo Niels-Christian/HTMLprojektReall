@@ -3,7 +3,7 @@ public class Patient {
 
     String CPR;
     String Name;
-    String ECG;
+    Double ECG;
     String Note;
 
     public String getCPR() {

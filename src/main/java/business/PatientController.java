@@ -1,6 +1,7 @@
-package model;
+package business;
 
 import jakarta.ws.rs.FormParam;
+import model.DatabaseConnector;
 import service.Patient;
 
 import java.sql.*;
@@ -40,5 +41,16 @@ public class PatientController {
         }
 
     return null;
+    }
+
+    public void save(Patient patient) {
+        Connection connection = DatabaseConnector.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO PatientInfo VALUES (?,?,?,?)";
+        preparedStatement.setString(1,patient.getName());
+        preparedStatement.setString(2,patient.getCPR());
+        preparedStatement.setDouble(3,patient.getECG());
+        preparedStatement.setString(4,patient.getNote());
+
+
     }
 }
