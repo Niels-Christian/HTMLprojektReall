@@ -1,7 +1,10 @@
 package service;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import model.GetPatient;
 
 @Path("patients")
@@ -16,9 +19,10 @@ public class PatientService{
     }
 
     @POST
-    public Patient postPatient(Patient patient){
-        return patient;
-    }
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void postPatient(Patient patient){
+        System.out.println(patient);
 
+    }
 
 }

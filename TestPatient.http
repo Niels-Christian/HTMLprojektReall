@@ -1,0 +1,13 @@
+GET http://localhost:8080/rest/patients/123456-1234
+
+
+### POST
+POST http://localhost:8080/rest/patients
+Content-Type: application/json
+
+{
+  "name": "Hans Hansen",
+  "ecg": "0.1234",
+  "cpr": "123456-1234",
+  "note": "Måske levende"
+}

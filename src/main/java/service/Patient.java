@@ -37,5 +37,15 @@ public class Patient {
     public void setNote(String note) {
         Note = note;
     }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "CPR='" + CPR + '\'' +
+                ", Name='" + Name + '\'' +
+                ", ECG='" + ECG + '\'' +
+                ", Note='" + Note + '\'' +
+                '}';
+    }
 }
 
