@@ -50,7 +50,7 @@ public class PatientController {
         preparedStatement.setString(2,patient.getCPR());
         preparedStatement.setDouble(3,patient.getECG());
         preparedStatement.setString(4,patient.getNote());
-
+        preparedStatement.execute();
 
     }
 }

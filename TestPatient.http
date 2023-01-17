@@ -8,6 +8,6 @@ Content-Type: application/json
 {
   "name": "Hans Hansen",
   "ecg": "0.1234",
-  "cpr": "123456-1234",
+  "cpr": "123456-2345",
   "note": "Måske levende"
 }
