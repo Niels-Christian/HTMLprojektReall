@@ -11,8 +11,6 @@ public class PatientController {
     public Patient getPatient(String cpr){
         Connection conn = null;
         Statement stmt = null;
-//        Scanner scan = new Scanner(System.in);
-//        String is = scan.next();
 
         try { //
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -51,6 +49,5 @@ public class PatientController {
         preparedStatement.setDouble(3,patient.getECG());
         preparedStatement.setString(4,patient.getNote());
         preparedStatement.execute();
-
     }
 }
