@@ -25,7 +25,7 @@ public class PatientController {
             while (rs.next()) {
                 patient.setName(rs.getString(1));
                 patient.setCPR(rs.getString(2));
-                patient.setECG(rs.getString(3));
+                patient.setECG(rs.getDouble(3));
                 patient.setNote(rs.getString(4));
             }
             rs.close();
@@ -43,9 +43,9 @@ public class PatientController {
     return null;
     }
 
-    public void save(Patient patient) {
+    public void save(Patient patient) throws SQLException {
         Connection connection = DatabaseConnector.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO PatientInfo VALUES (?,?,?,?)";
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO PatientInfo VALUES (?,?,?,?)");
         preparedStatement.setString(1,patient.getName());
         preparedStatement.setString(2,patient.getCPR());
         preparedStatement.setDouble(3,patient.getECG());

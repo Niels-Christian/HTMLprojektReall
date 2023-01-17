@@ -4,6 +4,8 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import business.PatientController;
 
+import java.sql.SQLException;
+
 @Path("patients")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -17,7 +19,7 @@ private PatientController patientController = new PatientController();
     }
 
     @POST
-    public Patient postPatient(Patient patient){
+    public Patient postPatient(Patient patient) throws SQLException {
         String navn = patient.getName();
         patientController.save(patient);
         navn = navn;

@@ -22,11 +22,11 @@ public class Patient {
         Name = name;
     }
 
-    public String getECG() {
+    public Double getECG() {
         return ECG;
     }
 
-    public void setECG(String ECG) {
+    public void setECG(Double ECG) {
         this.ECG = ECG;
     }
 
