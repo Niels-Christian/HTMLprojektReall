@@ -3,7 +3,6 @@ public class Patient
 {
     String CPR;
     String Name;
-    String ECG;
     String Note;
 
     public String getCPR() {
@@ -20,14 +19,6 @@ public class Patient
 
     public void setName(String name) {
         Name = name;
-    }
-
-    public String getECG() {
-        return ECG;
-    }
-
-    public void setECG(String ECG) {
-        this.ECG = ECG;
     }
 
     public String getNote() {

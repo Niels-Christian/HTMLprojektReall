@@ -30,9 +30,29 @@
         const json = await res.json();
         alert(JSON.stringify(json))
     }
+    async function hentEKG(){
+        const res = await  fetch("rest/ecgs/1110109996"); //Using dummy CPR
+        const json = await res.json(); //Conversion to json;
+        alert(JSON.stringify(json)) //Just checking what came back
+        //Lets draw some
+        const ekg = json[0]; //Take first EKG on list
+        console.log(ekg) //log the ekg
+        const samples = ekg.samples // Getting ekg samples
+        console.log(samples) //See if we got some samples
+        const context = document.getElementById("mycanvas").getContext("2d");
+        context.beginPath()
+        for(let i=0;i<samples.length;i++){
+            const sample = samples[i];
+            console.log("sample: " + sample)
+            context.lineTo(sample[0], sample[1]);
+        }
+        context.stroke();
+    }
 </script>
 <button onclick="hentPatienter()">Hent</button>
 <div id="data"></div>
 <button onclick="sendPatient()">Send</button>
+<button onclick="hentEKG()">Hent nogle EKG data</button>
+<canvas id="mycanvas" width="100" height="100"></canvas>
 </body>
 </html>

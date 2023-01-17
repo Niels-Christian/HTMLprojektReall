@@ -20,13 +20,12 @@ public class GetPatient {
             conn = DriverManager.getConnection("jdbc:mysql://mysql-db.caprover.diplomportal.dk/s215846?" +
                     "user=s215846&password=E2yMFR0C4Cs7u3Bc5gsih");
             stmt = conn.createStatement();
-            String query = "select name, cpr, ecg, note from PatientInfo where cpr='" + cpr +"'";
+            String query = "select name, cpr, note from PatientInfo where cpr='" + cpr +"'";
             ResultSet rs = stmt.executeQuery(query);
             Patient patient = new Patient();
             while (rs.next()) {
                 patient.setName(rs.getString(1));
                 patient.setCPR(rs.getString(2));
-                patient.setECG(rs.getString(3));
                 patient.setNote(rs.getString(4));
             }
             rs.close();

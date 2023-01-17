@@ -83,6 +83,11 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <version>20220924</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.13.4</version>
+        </dependency>
 
     </dependencies>
     <build>

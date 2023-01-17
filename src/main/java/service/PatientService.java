@@ -2,6 +2,7 @@ package service;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+
 import model.GetPatient;
 
 @Path("patients")
