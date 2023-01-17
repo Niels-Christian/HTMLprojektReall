@@ -2,13 +2,13 @@ package service;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import model.GetPatient;
+import model.PatientController;
 
 @Path("patients")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class PatientService{
-private GetPatient getPatient = new GetPatient();
+private PatientController getPatient = new PatientController();
     @GET
     @Path("{cpr}")
     public Patient getPatient(@PathParam("cpr") String cpr){

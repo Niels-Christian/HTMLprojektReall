@@ -1,0 +1,4 @@
+POST http://localhost:8080/HTMLprojektReal_war/rest/ecg
+Content-Type: application/json
+
+{"voltage":12.10,"time": 10.10}

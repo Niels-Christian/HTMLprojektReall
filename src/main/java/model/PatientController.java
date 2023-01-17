@@ -1,15 +1,13 @@
 package model;
 
 import jakarta.ws.rs.FormParam;
-import jakarta.ws.rs.GET;
 import service.Patient;
 
 import java.sql.*;
 import java.lang.String;
 
-public class GetPatient {
-    @GET
-    public Patient getPatient(@FormParam("cprForm") String cpr){
+public class PatientController {
+    public Patient getPatient(String cpr){
         Connection conn = null;
         Statement stmt = null;
 //        Scanner scan = new Scanner(System.in);
