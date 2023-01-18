@@ -74,7 +74,6 @@
         var cpr = document.getElementById("CPR input").value;
         const res = await  fetch("rest/ecg/" + cpr);
         const json = await res.json();
-        alert(JSON.stringify(json))
         const samples = json.samples
         console.log(samples)
         const context = document.getElementById("mycanvas").getContext("2d");

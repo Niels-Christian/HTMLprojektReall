@@ -11,7 +11,7 @@ public class PatientController {
     public Patient getPatient(String cpr){
         Connection conn = null;
         Statement stmt = null;
-// hej
+
         try { //
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://mysql-db.caprover.diplomportal.dk/s215846?" +
