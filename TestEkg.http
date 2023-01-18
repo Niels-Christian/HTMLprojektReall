@@ -2,3 +2,6 @@ POST http://localhost:8080/HTMLprojektReal_war/rest/ecg
 Content-Type: application/json
 
 {"voltage":12.10,"time": 10.10}
+
+### Get some Data
+GET http://localhost:8080/HTMLprojektReal_war/rest/ecg/597340-0420

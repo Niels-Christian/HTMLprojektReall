@@ -1,7 +1,6 @@
 package service;
 
 import model.ECGSample;
-
 import java.util.ArrayList;
 import java.util.List;
 
